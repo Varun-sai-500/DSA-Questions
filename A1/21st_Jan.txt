@@ -1,0 +1,298 @@
+Two brothers want to play a game, 
+The rules of the game are: one player gives two sorted lists of 
+numerical elements and a number (sum). 
+The opponent has to find the closest pair of elements 
+to the given sum.
+-> pair consists of elements from each list
+
+Please help those brothers to develop a program, that takes 
+two sorted lists as input and return a pair as output.
+
+Input Format:
+-------------
+size of list_1
+list_1 values
+size of list_2
+list_2 values
+closest number
+
+Output Format:
+--------------
+comma-separated pair
+
+Sample Input-1:
+---------------
+4
+1 4 5 7
+4
+10 20 30 40
+32
+Sample Output-1
+---------------
+1,30
+
+Sample Input-2
+---------------
+3
+2 4 6
+4
+5 7 11 13
+15
+
+Sample Output-2
+---------------
+2, 13
+
+
+You are given an integer array nums of length n and an integer target. 
+Your task is to find three integers in nums such that their sum is closest to 
+the given target.
+
+Return the sum of these three integers.
+
+You may assume that each input would have exactly one solution.
+
+Input Format:
+-------------
+Line-1: An integer n, the size of the array.
+Line-2: n space-separated integers representing the elements of the array nums.
+Line-3: A single integer target.
+
+Output Format:
+--------------
+Line-1: Print a single integer, representing the sum of three integers closest 
+to the target.
+
+Sample Input-1:
+---------------
+4
+-1 2 1 -4
+1
+
+Sample Output-1:
+----------------
+2
+
+Sample Input-2:
+---------------
+3
+0 0 0
+1
+
+Sample Output-2:
+----------------
+0
+
+You are given three sorted integer arrays A[], B[], and C[], and an integer 
+target.
+Your task is to find one element from each array (A[i], B[j], and C[k]) such 
+that the sum of these three elements is equal to target.
+
+If there is no exact match, return the triplet with the minimum absolute 
+difference to the target.
+
+Input Format:
+-------------
+Line 1: An integer N, the size of the first array.
+Line 2: N space-separated integers representing elements of array A.
+Line 3: An integer M, the size of the second array.
+Line 4: M space-separated integers representing elements of array B.
+Line 5: An integer P, the size of the third array.
+Line 6: P space-separated integers representing elements of array C.
+Line 7: An integer target, the required sum.
+
+Output Format:
+--------------
+Line-1: Print the triplet (A[i], B[j], C[k]) that either matches the target or 
+has the closest sum to the target.
+
+Constraints:
+------------
+Time Complexity: O(N + M + P)
+Space Complexity: O(1)
+
+Sample Input-1:
+---------------
+4
+5 10 20 30
+4
+1 3 7 10
+4
+2 5 8 12
+25
+
+Sample Output-1:
+----------------
+10 7 8
+
+Explanation:
+-------------
+The sum 10 + 7 + 8 = 25, which exactly matches target.
+
+
+Sample Input-2:
+---------------
+3
+1 5 10
+3
+3 6 9
+3
+4 7 8
+30
+
+Sample Output-2:
+----------------
+10 9 8
+
+Explanation:
+------------
+The sum 10 + 9 + 8 = 27, which is the closest sum to 30 
+(minimum absolute difference |30 - 27| = 3).
+
+
+Andy and Berry are serving water to n guests sitting in a line.
+Each guest needs a certain amount of water.
+
+Andy starts serving from the left end (guest 0).
+Berry starts serving from the right end (guest n−1).
+Both move towards the center.
+
+Each of them has a water jar:
+Andy’s jar has capacity: capacityA
+Berry’s jar has capacity: capacityB
+
+Initially, both jars are full.
+
+Before serving a guest:
+If the jar does not have enough water, it must be refilled.
+
+Refilling is instant.
+
+When both reach the same guest, the person who has more water serves that guest.
+If both have the same amount, Andy serves.
+
+Your task is to calculate how many times the jars are refilled to serve all 
+guests.
+
+Input Format:
+------------------------------------------
+An integer n – number of guests
+n integers – water required by each guest
+Integer capacityA – Andy’s jar capacity
+Integer capacityB – Berry’s jar capacity
+
+Output Format:
+----------------------------------
+Print a single integer:
+the total number of refills required
+
+Sample Input 1:
+--------------
+6
+2 4 5 1 2 3
+5
+5
+ 
+Sample Output 1:
+----------------
+3
+
+
+A tenth standard student has been given a task, Given P number of subject marks 
+and a number I, He has to print the I-th least value of sums among all the 
+possible sub-arrays of marks.
+
+Input Format:
+-------------
+Line-1: Two space separated inetegers, P and I.
+Line-2: P space separated integers, marks[].
+
+Output Format:
+--------------
+Print the I-th least value of possible sums.
+
+Sample Input-1:
+--------------
+3 4
+3 2 4
+
+Sample output-1:
+---------------
+5
+
+Explanation: 
+------------
+The subarrays of 3 2 4 are:
+1st subarray: 3 the sum is 3
+2nd subarray: 2 the sum is 2
+3rd subarray: 4 the sum is 4
+4th subarray: 3,2 the sum is 5
+5th subarray: 2,4 the sum is 6
+6th subarray: 3,2,4 the sum is 9
+
+The 4th smallest is 5
+
+Sample Input-2:
+---------------
+4 7
+2 2 4 4
+
+Sample output-2:
+----------------
+8
+
+Explanation: 
+------------
+The subarrays of 2 2 4 4 are
+
+1st subarray: 2 the sum is 2
+2nd subarray: 2 the sum is 2
+3rd subarray: 4 the sum is 4
+4th subarray: 4 the sum is 4
+5th subarray: 2,2 the sum is 4
+6th subarray: 2,4 the sum is 6
+7th subarray: 4,4 the sum is 8
+8th subarray: 2,2,4 the sum is 8
+9th subarray: 2,4,4 the sum is 10
+10th subarray: 2,2,4,4 the sum is 12
+
+The 7th smallest is 8
+
+
+/*
+Mr.Ram is a sales manager of Dmart, for his analysis he has to monitor 
+sales of Dmart every day. He need to send report of maximum sales 
+of every K consecutive days from given N number of days sales.
+Write a java program to do his task easy.
+
+Input Format:
+-------------
+Line-1: Two space separated integers, N and K
+Line-2: N space separated integers, sales[].
+
+Output Format:
+--------------
+Print maximum sales of every K consecutive days
+
+
+Sample Input 1:
+---------------
+9 3
+1 2 3 1 4 5 2 3 6
+
+Sample output 1:
+----------------
+3 3 4 5 5 5 6
+
+Explanation: 
+Maximum of subarray {1, 2, 3} is 3
+Maximum of subarray {2, 3, 1} is 3
+Maximum of subarray {3, 1, 4} is 4
+Maximum of subarray {1, 4, 5} is 5
+Maximum of subarray {4, 5, 2} is 5
+Maximum of subarray {5, 2, 3} is 5
+Maximum of subarray {2, 3, 6} is 6
+*/
+
+
+
