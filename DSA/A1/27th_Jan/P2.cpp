@@ -1,64 +1,55 @@
-// You are given an integer N. Your task is to return an array ans of length N + 1 
-// where each ans[i] represents the number of 1's in the binary representation of i.
+/*
+Problem Statement
 
-// Input Format:
-// --------------
-// A single integer N, representing the range from 0 to N.
+Bitwise operations allow efficient manipulation of binary representations of numbers.
+You are required to solve the following problems efficiently:
 
-// Output Format:
-// ---------------
-// An array of N+1 integers where each element represents the count of 1s in the 
-// binary representation of each number from 0 to N.
+Given an integer N, generate an array ans of size N + 1, where
+ans[i] represents the number of set bits in the binary representation of i.
 
-// Sample Input-1:
-// ---------------
-// 2
+Given an array of integers where every element appears exactly twice except one,
+find and return the element that appears only once.
 
-// Sample Output-1:
-// ----------------
-// [0,1,1]
+Your solution must run in linear time and use constant extra space wherever applicable.
 
-// Explanation:
-// ------------
-// 0 --> 0
-// 1 --> 1
-// 2 --> 10
+Line 1: An integer N
+Line 2: An integer size of array
+Line 3: size space-separated integers
 
-// Sample Input-2:
-// ---------------
-// 5
+*/
 
-// Sample Output-2:
-// --------------- 
-// [0,1,1,2,1,2]
-
-// Explanation:
-// ------------
-// 0 --> 0
-// 1 --> 1
-// 2 --> 10
-// 3 --> 11
-// 4 --> 100
-// 5 --> 101
-
-
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int main(){
+// Count bits from 0 to N
+vector<int> countBits(int n) {
+    vector<int> ans(n + 1, 0);
+    for (int i = 1; i <= n; i++) {
+        ans[i] = ans[i >> 1] + (i & 1);
+    }
+    return ans;
+}
+
+int main() {
+
+    // Counting Bits
     int n;
     cin >> n;
-    vector<int> vec;
-    for(int i=0;i<=n;i++){
-        int sum=0;
-        int a=i;
-        while(a>0){
-            sum += (a&1);
-            a = a >> 1;
-        }
-        vec.push_back(sum);
+    vector<int> res = countBits(n);
+    for (int x : res) cout << x << " ";
+    cout << endl;
+
+    // Single Number
+    int size;
+    cin >> size;
+    int ans = 0;
+    for (int i = 0; i < size; i++) {
+        int x;
+        cin >> x;
+        ans ^= x;
     }
-    for(int i:vec) cout << i << " ";
+    cout << ans << endl;
+
     return 0;
 }
